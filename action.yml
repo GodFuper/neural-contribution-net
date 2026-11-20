@@ -1,0 +1,56 @@
+name: 'Neural Contribution Network'
+description: 'Transforms your GitHub contribution graph into an animated bioluminescent neural network for profile README'
+author: 'neural-contribution-net'
+branding:
+  icon: 'activity'
+  color: 'cyan'
+
+inputs:
+  github_user_name:
+    description: 'Target GitHub username (defaults to repository owner)'
+    required: false
+    default: '${{ github.repository_owner }}'
+  github_token:
+    description: 'GitHub token for GraphQL API (defaults to GITHUB_TOKEN)'
+    required: false
+    default: '${{ github.token }}'
+  svg_out_path:
+    description: 'Output path for generated SVG file'
+    required: false
+    default: 'dist/neural-net.svg'
+  theme:
+    description: 'Color theme: cyberpunk, matrix, synthwave, aurora, solaris, monochrome, light'
+    required: false
+    default: 'cyberpunk'
+  animation_speed:
+    description: 'Signal impulse speed: slow, normal, fast'
+    required: false
+    default: 'normal'
+  max_links_per_neuron:
+    description: 'Maximum synapses extending from each active neuron (1 to 4)'
+    required: false
+    default: '3'
+  curved_lines:
+    description: 'Use smooth organic cubic Bezier synapses instead of straight lines'
+    required: false
+    default: 'true'
+  generate_theme_variants:
+    description: 'Also generate separate -dark.svg and -light.svg files'
+    required: false
+    default: 'true'
+
+outputs:
+  svg_path:
+    description: 'Absolute path to the generated SVG'
+  total_contributions:
+    description: 'Total contributions in the past year'
+  active_nodes:
+    description: 'Number of active neural nodes'
+  synapse_count:
+    description: 'Number of synthesized synapses'
+  neural_state:
+    description: 'Assessed neural cognitive load (LOW, OPTIMAL, HIGH, OVERLOAD)'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

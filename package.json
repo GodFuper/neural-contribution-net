@@ -1,0 +1,35 @@
+{
+  "name": "neural-contribution-net",
+  "version": "1.0.0",
+  "description": "Transform GitHub contribution graph into an animated bioluminescent neural network for profile README",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "esbuild src/action.ts --bundle --platform=node --target=node20 --outfile=dist/index.js",
+    "build:cli": "esbuild src/cli.ts --bundle --platform=node --target=node20 --outfile=dist/cli.js",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/engine.test.ts",
+    "generate:demo": "tsx src/cli.ts --demo --out dist/demo-cyberpunk.svg --theme cyberpunk",
+    "generate:all-demos": "tsx src/cli.ts --demo --generate-all-themes --out-dir dist"
+  },
+  "keywords": [
+    "github-action",
+    "profile-readme",
+    "contribution-graph",
+    "neural-network",
+    "svg",
+    "animation",
+    "generative-art"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "esbuild": "^0.24.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
