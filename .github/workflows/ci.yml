@@ -30,3 +30,10 @@ jobs:
 
       - name: Build action bundle
         run: npm run build
+
+      - name: Test local action synthesis
+        uses: ./
+        with:
+          github_user_name: GodFuper
+          svg_out_path: dist/ci-test.svg
+          theme: cyberpunk

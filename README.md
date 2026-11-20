@@ -45,7 +45,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Generate Neural Network SVG
-        uses: your-username/neural-contribution-net@v1
+        uses: GodFuper/neural-contribution-net@v1
         with:
           github_user_name: ${{ github.repository_owner }}
           svg_out_path: dist/neural-net.svg

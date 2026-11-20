@@ -1,8 +1,8 @@
-name: Generate Neural Contribution Graph
+name: Update Neural Contribution Graph
 
 on:
   schedule:
-    # Run daily at midnight UTC
+    # Run daily at 00:00 UTC
     - cron: '0 0 * * *'
   workflow_dispatch:
   push:
@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Synthesize Neural Network
-        uses: your-username/neural-contribution-net@v1
+        uses: GodFuper/neural-contribution-net@v1
         with:
           github_user_name: ${{ github.repository_owner }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
